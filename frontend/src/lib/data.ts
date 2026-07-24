@@ -1,7 +1,27 @@
 import type { Finca, City, Reserva, CalendarState } from '@/types';
 
-const PIC = (seed: string, w = 800, h = 500) =>
-  `https://picsum.photos/seed/${seed}/${w}/${h}`;
+/* Fotos reales de Unsplash, recortadas al tamaño exacto que se pide */
+const UN = (id: string, w = 800, h = 500) =>
+  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
+
+/* Biblioteca temática de imágenes (IDs de Unsplash verificados), reutilizada
+   entre fincas y ciudades según la escena que representan */
+const IMG = {
+  casaBosque:      '1568605114967-8130f3a36994', // casa de madera al atardecer
+  villaPiscina:    '1512917774080-9991f1c4c750', // villa blanca con piscina y palma
+  villaLounge:     '1613977257363-707ba9348227', // villa con piscina y camastros
+  piscinaResort:   '1571896349842-33c89424de2d', // piscina tipo resort al atardecer
+  piscinaInfinita: '1580587771525-78b9dba3b914', // piscina infinita de villa
+  piscinaPalmas:   '1610641818989-c2051b5e2cfd', // piscina entre palmeras
+  terraza:         '1600585154340-be6161a56a0c', // casa moderna con jardín al anochecer
+  interior:        '1591825729269-caeb344f6df2', // sala acogedora de madera
+  llano:           '1500382017468-9049fed747ef', // campo dorado al atardecer (llanos)
+  valle:           '1464822759023-fed622ff2c3b', // valle verde entre montañas
+  cumbres:         '1506905925346-21bda4d32df4', // cumbres sobre un mar de nubes
+  niebla:          '1470071459604-3b5ec3a7fe05', // altiplano verde con niebla
+  cascada:         '1432405972618-c60b0225b8f9', // cascada natural entre rocas
+  cafe:            '1524350876685-274059332603', // granos de café
+};
 
 export const fincas: Finca[] = [
   {
@@ -12,8 +32,9 @@ export const fincas: Finca[] = [
     tagline: 'Piscina, asador y vista al piedemonte llanero',
     desc: 'A 10 minutos del centro de Acacías, El Piedemonte es una finca de descanso rodeada de palmas y morichales. Amplias zonas verdes, kiosko con asador llanero y piscina con vista a la cordillera. Ideal para reuniones familiares y planes de fin de semana en el Meta.',
     amenities: ['piscina', 'bbq', 'parqueadero', 'wifi', 'aire', 'rio'],
-    imageUrl: PIC('finca-llanera', 800, 500),
-    galleryUrls: [PIC('finca-llanera', 1200, 700), PIC('piscina-llanera', 400, 300), PIC('rio-meta', 400, 300), PIC('kiosko', 400, 300), PIC('finca-noche', 400, 300)],
+    discount: 15,
+    imageUrl: UN(IMG.casaBosque, 800, 500),
+    galleryUrls: [UN(IMG.casaBosque, 1200, 700), UN(IMG.piscinaResort, 400, 300), UN(IMG.cascada, 400, 300), UN(IMG.terraza, 400, 300), UN(IMG.llano, 400, 300)],
   },
   {
     id: 'tamarindo', name: 'Quinta El Tamarindo',
@@ -23,8 +44,8 @@ export const fincas: Finca[] = [
     tagline: 'Clásico plan de piscina en tierra caliente',
     desc: 'Melgar en su máxima expresión: piscina amplia con jacuzzi, zona de hamacas y palmeras por todos lados. Quinta El Tamarindo es perfecta para grupos que buscan sol, calor y descanso a solo dos horas de Bogotá.',
     amenities: ['piscina', 'bbq', 'parqueadero', 'wifi', 'aire'],
-    imageUrl: PIC('piscina-palmas', 800, 500),
-    galleryUrls: [PIC('piscina-palmas', 1200, 700), PIC('hamacas', 400, 300), PIC('jacuzzi', 400, 300), PIC('terraza-melgar', 400, 300), PIC('bbq-tolima', 400, 300)],
+    imageUrl: UN(IMG.piscinaPalmas, 800, 500),
+    galleryUrls: [UN(IMG.piscinaPalmas, 1200, 700), UN(IMG.piscinaInfinita, 400, 300), UN(IMG.villaPiscina, 400, 300), UN(IMG.terraza, 400, 300), UN(IMG.valle, 400, 300)],
   },
   {
     id: 'anapoima', name: 'Finca Sol de Anapoima',
@@ -34,8 +55,8 @@ export const fincas: Finca[] = [
     tagline: 'El mejor clima de Colombia, todo el año',
     desc: "En la 'ciudad del eterno sol', Sol de Anapoima ofrece un clima privilegiado de 28°C constantes. Piscina infinita con vista al valle, terrazas amplias y atardeceres inolvidables. El escape ideal cerca de Bogotá.",
     amenities: ['piscina', 'bbq', 'parqueadero', 'wifi', 'aire', 'rio'],
-    imageUrl: PIC('finca-atardecer', 800, 500),
-    galleryUrls: [PIC('finca-atardecer', 1200, 700), PIC('piscina-infinita', 400, 300), PIC('terraza-valle', 400, 300), PIC('vista-cundinamarca', 400, 300), PIC('sunset-finca', 400, 300)],
+    imageUrl: UN(IMG.villaLounge, 800, 500),
+    galleryUrls: [UN(IMG.villaLounge, 1200, 700), UN(IMG.piscinaInfinita, 400, 300), UN(IMG.terraza, 400, 300), UN(IMG.llano, 400, 300), UN(IMG.cumbres, 400, 300)],
   },
   {
     id: 'cafe-niebla', name: 'Finca Café & Niebla',
@@ -45,8 +66,9 @@ export const fincas: Finca[] = [
     tagline: 'Cultura cafetera entre montañas y neblina',
     desc: 'En el corazón del Eje Cafetero, rodeada de palmas de cera del Valle del Cocora. Café & Niebla combina una casa tradicional cafetera con chimenea, miradores y tour de café propio. Mañanas frescas y verdes infinitos.',
     amenities: ['bbq', 'parqueadero', 'wifi', 'rio'],
-    imageUrl: PIC('eje-cafetero', 800, 500),
-    galleryUrls: [PIC('eje-cafetero', 1200, 700), PIC('cafe-palmas', 400, 300), PIC('cocora', 400, 300), PIC('chimenea', 400, 300), PIC('niebla-quindio', 400, 300)],
+    discount: 20,
+    imageUrl: UN(IMG.niebla, 800, 500),
+    galleryUrls: [UN(IMG.niebla, 1200, 700), UN(IMG.cafe, 400, 300), UN(IMG.cascada, 400, 300), UN(IMG.interior, 400, 300), UN(IMG.valle, 400, 300)],
   },
   {
     id: 'palmeras', name: 'Hacienda Las Palmeras',
@@ -56,8 +78,8 @@ export const fincas: Finca[] = [
     tagline: 'Hacienda ganadera para grandes celebraciones',
     desc: 'Una hacienda llanera de tradición con corredores amplios, hamacas y caballerizas. Capacidad para eventos de hasta 20 huéspedes con salón social, dos piscinas y cancha múltiple.',
     amenities: ['piscina', 'bbq', 'parqueadero', 'wifi', 'aire', 'rio'],
-    imageUrl: PIC('hacienda-llanera', 800, 500),
-    galleryUrls: [PIC('hacienda-llanera', 1200, 700), PIC('salon-hacienda', 400, 300), PIC('caballeriza', 400, 300), PIC('piscina-hacienda', 400, 300), PIC('noche-llano', 400, 300)],
+    imageUrl: UN(IMG.piscinaResort, 800, 500),
+    galleryUrls: [UN(IMG.piscinaResort, 1200, 700), UN(IMG.villaPiscina, 400, 300), UN(IMG.valle, 400, 300), UN(IMG.terraza, 400, 300), UN(IMG.llano, 400, 300)],
   },
   {
     id: 'santafe', name: 'Hacienda La Esperanza',
@@ -67,8 +89,8 @@ export const fincas: Finca[] = [
     tagline: 'Casona colonial con piscina y mucha historia',
     desc: 'A una hora de Medellín, esta casona de arquitectura colonial mezcla patios empedrados, corredores con arcos y una piscina rodeada de buganviles. Calor antioqueño, pueblo patrimonio y descanso de lujo.',
     amenities: ['piscina', 'bbq', 'parqueadero', 'wifi', 'aire'],
-    imageUrl: PIC('casona-colonial', 800, 500),
-    galleryUrls: [PIC('casona-colonial', 1200, 700), PIC('patio-colonial', 400, 300), PIC('corredor-arcos', 400, 300), PIC('piscina-buganviles', 400, 300), PIC('pueblo-antioquia', 400, 300)],
+    imageUrl: UN(IMG.villaPiscina, 800, 500),
+    galleryUrls: [UN(IMG.villaPiscina, 1200, 700), UN(IMG.piscinaInfinita, 400, 300), UN(IMG.piscinaPalmas, 400, 300), UN(IMG.interior, 400, 300), UN(IMG.terraza, 400, 300)],
   },
   {
     id: 'villa-acacia', name: 'Villa Acacía',
@@ -78,8 +100,8 @@ export const fincas: Finca[] = [
     tagline: 'Casa campestre a pasos del parque principal',
     desc: 'Comodidad campestre sin alejarte de la ciudad. Villa Acacía combina jardines tropicales con espacios frescos y bien ventilados. Perfecta para grupos que quieren piscina de día y la vida del pueblo de noche.',
     amenities: ['piscina', 'bbq', 'parqueadero', 'wifi', 'aire'],
-    imageUrl: PIC('villa-campestre', 800, 500),
-    galleryUrls: [PIC('villa-campestre', 1200, 700), PIC('jardin-tropical', 400, 300), PIC('piscina-villa', 400, 300), PIC('terraza-villa', 400, 300), PIC('habitacion-villa', 400, 300)],
+    imageUrl: UN(IMG.piscinaInfinita, 800, 500),
+    galleryUrls: [UN(IMG.piscinaInfinita, 1200, 700), UN(IMG.villaLounge, 400, 300), UN(IMG.terraza, 400, 300), UN(IMG.piscinaPalmas, 400, 300), UN(IMG.interior, 400, 300)],
   },
   {
     id: 'hato-llanero', name: 'El Hato Llanero',
@@ -89,8 +111,8 @@ export const fincas: Finca[] = [
     tagline: 'Auténtica experiencia llanera con cabalgatas',
     desc: 'Vive el llano de verdad: cabalgatas al amanecer, mamona a la llanera y noches de joropo. El Hato Llanero ofrece alojamiento amplio con kiosko principal, piscina y zona de fogata bajo las estrellas.',
     amenities: ['piscina', 'bbq', 'parqueadero', 'aire', 'rio'],
-    imageUrl: PIC('llano-cabalgata', 800, 500),
-    galleryUrls: [PIC('llano-cabalgata', 1200, 700), PIC('caballos-llano', 400, 300), PIC('fogata-llano', 400, 300), PIC('kiosko-llano', 400, 300), PIC('amanecer-meta', 400, 300)],
+    imageUrl: UN(IMG.llano, 800, 500),
+    galleryUrls: [UN(IMG.llano, 1200, 700), UN(IMG.valle, 400, 300), UN(IMG.piscinaResort, 400, 300), UN(IMG.terraza, 400, 300), UN(IMG.cascada, 400, 300)],
   },
   {
     id: 'acaciitas', name: 'Finca Río Acaciítas',
@@ -100,8 +122,8 @@ export const fincas: Finca[] = [
     tagline: 'Refugio íntimo a orillas del río Acaciítas',
     desc: 'Un plan tranquilo para parejas y familias pequeñas. Acceso directo a una playita del río Acaciítas, charcos cristalinos y mucha sombra de árboles nativos.',
     amenities: ['bbq', 'parqueadero', 'wifi', 'rio'],
-    imageUrl: PIC('rio-acacias', 800, 500),
-    galleryUrls: [PIC('rio-acacias', 1200, 700), PIC('charco-cristalino', 400, 300), PIC('playa-rio', 400, 300), PIC('sombra-arboles', 400, 300), PIC('finca-pequena', 400, 300)],
+    imageUrl: UN(IMG.cascada, 800, 500),
+    galleryUrls: [UN(IMG.cascada, 1200, 700), UN(IMG.niebla, 400, 300), UN(IMG.valle, 400, 300), UN(IMG.llano, 400, 300), UN(IMG.interior, 400, 300)],
   },
   {
     id: 'cascada', name: 'Finca La Cascada',
@@ -111,18 +133,18 @@ export const fincas: Finca[] = [
     tagline: 'Cascada natural privada y senderos ecológicos',
     desc: 'En la parte alta de Melgar, La Cascada regala una caída de agua privada y senderos entre bosque. Clima cálido de día, noches frescas y todas las comodidades para un fin de semana de reconexión.',
     amenities: ['piscina', 'bbq', 'parqueadero', 'wifi', 'aire', 'rio'],
-    imageUrl: PIC('cascada-melgar', 800, 500),
-    galleryUrls: [PIC('cascada-melgar', 1200, 700), PIC('sendero-bosque', 400, 300), PIC('cascada-privada', 400, 300), PIC('piscina-cascada', 400, 300), PIC('bosque-tolima', 400, 300)],
+    imageUrl: UN(IMG.cascada, 800, 500),
+    galleryUrls: [UN(IMG.cascada, 1200, 700), UN(IMG.niebla, 400, 300), UN(IMG.piscinaPalmas, 400, 300), UN(IMG.valle, 400, 300), UN(IMG.piscinaResort, 400, 300)],
   },
 ];
 
 const _cities = [
-  { key: 'acacias', name: 'Acacías', dept: 'Meta', scene: 'amanecer' as const, count: 0, imageUrl: PIC('acacias-llanos', 600, 480) },
-  { key: 'villavicencio', name: 'Villavicencio', dept: 'Meta', scene: 'pradera' as const, count: 0, imageUrl: PIC('villavicencio-meta', 600, 480) },
-  { key: 'melgar', name: 'Melgar', dept: 'Tolima', scene: 'pradera' as const, count: 0, imageUrl: PIC('melgar-piscinas', 600, 480) },
-  { key: 'anapoima', name: 'Anapoima', dept: 'Cundinamarca', scene: 'atardecer' as const, count: 0, imageUrl: PIC('anapoima-sol', 600, 480) },
-  { key: 'santafe', name: 'Santa Fe de Antioquia', dept: 'Antioquia', scene: 'amanecer' as const, count: 0, imageUrl: PIC('santafe-antioquia', 600, 480) },
-  { key: 'salento', name: 'Salento', dept: 'Quindío', scene: 'rio' as const, count: 0, imageUrl: PIC('salento-cocora', 600, 480) },
+  { key: 'acacias', name: 'Acacías', dept: 'Meta', scene: 'amanecer' as const, count: 0, imageUrl: UN(IMG.llano, 600, 480) },
+  { key: 'villavicencio', name: 'Villavicencio', dept: 'Meta', scene: 'pradera' as const, count: 0, imageUrl: UN(IMG.valle, 600, 480) },
+  { key: 'melgar', name: 'Melgar', dept: 'Tolima', scene: 'pradera' as const, count: 0, imageUrl: UN(IMG.piscinaPalmas, 600, 480) },
+  { key: 'anapoima', name: 'Anapoima', dept: 'Cundinamarca', scene: 'atardecer' as const, count: 0, imageUrl: UN(IMG.villaLounge, 600, 480) },
+  { key: 'santafe', name: 'Santa Fe de Antioquia', dept: 'Antioquia', scene: 'amanecer' as const, count: 0, imageUrl: UN(IMG.terraza, 600, 480) },
+  { key: 'salento', name: 'Salento', dept: 'Quindío', scene: 'rio' as const, count: 0, imageUrl: UN(IMG.niebla, 600, 480) },
 ];
 
 export type CityWithImage = (typeof _cities)[0];

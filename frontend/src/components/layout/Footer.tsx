@@ -14,12 +14,12 @@ const NAV_COLS = [
     ],
   },
   {
-    heading: 'Plataforma',
+    heading: 'Anfitriones',
     links: [
-      { label: 'Cómo funciona',    href: '/#como'   },
-      { label: 'Para anfitriones', href: '/admin'   },
-      { label: 'Panel de gestión', href: '/admin'   },
-      { label: 'Reservar ahora',   href: '/fincas'  },
+      { label: 'Publicar mi finca',        href: '/admin'   },
+      { label: 'Panel de gestión',         href: '/admin'   },
+      { label: 'Gestión de temporadas',    href: '/admin'   },
+      { label: 'Preguntas frecuentes',     href: '/'        },
     ],
   },
   {

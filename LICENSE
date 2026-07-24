@@ -1,64 +1,84 @@
 # LICENCIA PROPIETARIA — LLANO STUDIO
 
-Copyright (c) 2026 Llano Studio (llanostudio.co)
+Copyright (c) 2026 Llano Studio — https://llanostudio.co/
 Desarrollador: Martin David Velasquez Baquero
-Proyecto: Brently — Plataforma web de reservas de fincas
-Cliente: Brently
+Producto: Rently — Plataforma web de reservas de fincas
+
+Rently es un producto de software desarrollado y de propiedad de **Llano Studio**.
+El presente documento regula su uso, comercialización y protección.
 
 ---
 
-TÉRMINOS Y CONDICIONES
+## TÉRMINOS Y CONDICIONES
 
-1. TITULARIDAD DE DERECHOS
+### 1. TITULARIDAD
 
-   Todo el código fuente, diseño, arquitectura, documentación y demás
-   componentes de este repositorio son propiedad exclusiva de Llano Studio
-   hasta que el cliente (Brently) haya efectuado el pago total y completo
-   acordado en el contrato de desarrollo.
+Todo el código fuente, diseño, marca, arquitectura, documentación y demás
+componentes de este repositorio son **propiedad exclusiva de Llano Studio**.
+Ninguna parte de este software puede considerarse de dominio público ni de
+código abierto.
 
-   Una vez recibido el pago total, la titularidad de los derechos de autor
-   sobre el software se transfiere íntegramente a Brently, en los términos
-   establecidos en el contrato firmado entre las partes.
+### 2. DISPONIBILIDAD DEL PRODUCTO
 
-2. RESTRICCIONES
+Rently se ofrece bajo dos modalidades, siempre sujetas a un acuerdo escrito con
+Llano Studio:
 
-   Queda estrictamente prohibido, sin autorización escrita previa de
-   Llano Studio:
+- **Venta del producto** — Llano Studio puede vender la totalidad del producto
+  (o una licencia de explotación) a un comprador. Las condiciones, el alcance y
+  la transferencia de derechos se definen en el contrato de venta firmado entre
+  las partes.
 
-   a) Copiar, reproducir o distribuir el código fuente, parcial o
+- **Uso como anfitrión** — una persona o negocio puede contratar el uso de la
+  aplicación para publicar y administrar sus propias fincas (rol de anfitrión),
+  sin adquirir la propiedad del software. Este uso se otorga como un servicio y
+  no transfiere ningún derecho sobre el código.
+
+### 3. PROHIBICIÓN DE COPIA
+
+Queda **estrictamente prohibido**, sin autorización escrita previa de Llano
+Studio:
+
+a) Copiar, reproducir, clonar o distribuir el código fuente, parcial o
    totalmente, a cualquier persona o entidad ajena al proyecto.
 
-   b) Utilizar el código como base para otros proyectos, productos o
-   servicios, ya sean comerciales o no comerciales.
+b) Utilizar el código —o cualquier parte de él— como base para otros
+   proyectos, productos o servicios, comerciales o no.
 
-   c) Sublicenciar, vender, alquilar o transferir el software o cualquiera
-   de sus partes a terceros.
+c) Sublicenciar, revender, alquilar o transferir el software a terceros por
+   fuera de una venta autorizada por Llano Studio.
 
-   d) Publicar el código fuente en repositorios públicos, plataformas de
-   código abierto o cualquier medio de acceso público.
+d) Publicar el código fuente en repositorios públicos, plataformas de código
+   abierto o cualquier medio de acceso público.
 
-3. ACCESO AUTORIZADO
+### 4. MARCA Y RENOMBRAMIENTO EN CASO DE VENTA
 
-   Solo el equipo de desarrollo de Llano Studio y los representantes
-   autorizados de Brently tienen acceso a este repositorio. Dicho acceso
-   es estrictamente confidencial y no implica transferencia de derechos.
+El nombre **"Rently"**, su logotipo (el búho) y su identidad visual son marca de
+Llano Studio.
 
-4. GARANTÍA Y RESPONSABILIDAD
+En caso de que el producto sea vendido a un comprador, **el nombre "Rently" se
+reemplaza por el nombre comercial que elija el comprador**. La marca "Rently"
+permanece como propiedad de Llano Studio y no se incluye en la venta salvo
+pacto expreso en contrario dentro del contrato.
 
-   El software se entrega "tal como está" en el contexto del contrato de
-   desarrollo. Llano Studio no se hace responsable por daños derivados
-   del uso del software fuera de los términos acordados contractualmente.
+### 5. ACCESO AUTORIZADO
 
-5. LEY APLICABLE
+Solo el equipo de Llano Studio y las personas expresamente autorizadas tienen
+acceso a este repositorio. Dicho acceso es confidencial y no implica, por sí
+mismo, transferencia alguna de derechos.
 
-   Esta licencia se rige por las leyes de la República de Colombia.
-   Cualquier disputa será resuelta en la jurisdicción competente de
-   Bogotá, Colombia.
+### 6. GARANTÍA Y RESPONSABILIDAD
+
+El software se entrega "tal como está", en el contexto del acuerdo comercial
+correspondiente. Llano Studio no se hace responsable por daños derivados del
+uso del software fuera de los términos acordados.
+
+### 7. LEY APLICABLE
+
+Esta licencia se rige por las leyes de la República de Colombia. Cualquier
+disputa será resuelta en la jurisdicción competente de Colombia.
 
 ---
 
-Para consultas sobre licenciamiento o uso del software, contactar:
+Para consultas sobre licenciamiento, venta o uso de Rently, contactar:
 
-Llano Studio
-llanostudio.co
-contacto@llanostudio.co
+**Llano Studio** — https://llanostudio.co/ · contacto@llanostudio.co

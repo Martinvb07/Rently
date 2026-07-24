@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { fincas, calState, fmtCOP } from '@/lib/data';
 import DetailClient from './DetailClient';
@@ -31,5 +32,9 @@ export default async function DetailPage({ params }: PageProps) {
   const { id } = await params;
   const finca = fincas.find((f) => f.id === id);
   if (!finca) notFound();
-  return <DetailClient finca={finca} calState={calState} />;
+  return (
+    <Suspense>
+      <DetailClient finca={finca} calState={calState} />
+    </Suspense>
+  );
 }

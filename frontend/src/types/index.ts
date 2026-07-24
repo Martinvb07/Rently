@@ -22,6 +22,7 @@ export interface Finca {
   amenities: AmenityKey[];
   imageUrl: string;
   galleryUrls?: string[];
+  discount?: number;
 }
 
 export interface City {

@@ -56,7 +56,7 @@ export default function Testimonials() {
       </div>
 
       {/* Asymmetric layout: featured (wider) + two stacked */}
-      <div className="grid gap-6" style={{ gridTemplateColumns: '1.1fr 0.9fr' }}>
+      <div className="grid gap-6 grid-cols-1 md:grid-cols-2" style={{ gridTemplateColumns: undefined }}>
 
         {/* ── Featured testimonial ── */}
         <div
@@ -66,13 +66,13 @@ export default function Testimonials() {
           {/* Large quote mark as visual anchor */}
           <div>
             <span
-              className="block font-extrabold leading-none select-none"
-              style={{ fontSize: 96, color: '#8125E2', opacity: 0.35, marginBottom: -32, lineHeight: 1 }}
+              className="block font-extrabold leading-none select-none mb-4"
+              style={{ fontSize: 48, color: '#8125E2', opacity: 0.4, lineHeight: 1 }}
               aria-hidden="true"
             >
               &ldquo;
             </span>
-            <p className="text-[20px] text-gray-800 leading-relaxed font-semibold">
+            <p className="text-[17px] text-gray-800 leading-relaxed font-semibold max-w-[52ch]">
               {FEATURED.quote}
             </p>
           </div>
@@ -99,8 +99,8 @@ export default function Testimonials() {
             >
               <div>
                 <span
-                  className="block font-extrabold leading-none select-none"
-                  style={{ fontSize: 56, color: '#8125E2', opacity: 0.25, marginBottom: -16, lineHeight: 1 }}
+                  className="block font-extrabold leading-none select-none mb-3"
+                  style={{ fontSize: 36, color: '#8125E2', opacity: 0.3, lineHeight: 1 }}
                   aria-hidden="true"
                 >
                   &ldquo;
